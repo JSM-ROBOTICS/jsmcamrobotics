@@ -1,0 +1,215 @@
+/* Reseteo básico para asegurar consistencia entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables de color (para facilitar cambios y mantener consistencia) */
+:root {
+    --nasa-blue: #0B3D91; /* Un azul profundo, similar al de la NASA */
+    --light-grey: #D3D3D3;
+    --dark-grey: #333333;
+    --white: #FFFFFF;
+    --accent-red: #E04E39; /* Un rojo para acentos o botones */
+}
+
+body {
+    font-family: Arial, sans-serif; /* Fuente base */
+    line-height: 1.6;
+    color: var(--light-grey); /* Color de texto general */
+    background-color: var(--dark-grey); /* Fondo oscuro general */
+}
+
+.container {
+    max-width: 90%; /* Ancho máximo en móviles */
+    margin: 0 auto;
+    padding: 0 15px; /* Espaciado interno */
+}
+
+/* --- HEADER --- */
+.main-header {
+    background-color: var(--dark-grey);
+    padding: 15px 0;
+    position: relative; /* Necesario para posicionar el menú */
+    border-bottom: 1px solid var(--nasa-blue);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between; /* Espacia el logo y el botón */
+    align-items: center;
+}
+
+.main-header .logo img {
+   height: 60px; /* Ajusta el tamaño según tu preferencia, pero asegúrate de que sea el mismo para ancho y alto */
+    width: 60px;  
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 2px solid var(--nasa-blue); 
+}
+
+/* Estilos del botón de menú hamburguesa */
+.menu-toggle {
+    display: flex; /* Para que las "barras" estén una debajo de la otra */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1000; /* Asegura que esté por encima del menú */
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--white);
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Estilos de la navegación (oculta por defecto en móviles) */
+.main-nav {
+    display: none; /* Oculto por defecto en móviles */
+    position: absolute;
+    top: 100%; /* Debajo del header */
+    left: 0;
+    width: 100%;
+    background-color: var(--nasa-blue); /* Fondo del menú desplegado */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.main-nav.active {
+    display: block; /* Visible cuando se le añade la clase 'active' con JS */
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav ul li {
+    margin: 10px 0; /* Espacio vertical entre ítems del menú */
+}
+
+.main-nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    display: block; /* Para que todo el área del li sea clicable */
+    transition: background-color 0.3s ease;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos para el Hero (temporal, solo para visualizar) */
+.hero {
+    background-color: var(--nasa-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 80px 20px;
+    min-height: 400px; /* Altura mínima para el hero */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1em;
+    margin-bottom: 25px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--accent-red);
+    color: var(--white);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: darken(var(--accent-red), 10%); /* Esto requeriría un preprocesador o color manual */
+    background-color: #B23A2B; /* Un rojo un poco más oscuro */
+}
+
+/* Estilos para las secciones principales (temporal) */
+main {
+    padding: 20px 0;
+}
+
+section {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--dark-grey);
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+section h2 {
+    color: var(--nasa-blue);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}
+
+section p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+/* FOOTER (temporal) */
+.main-footer {
+    background-color: var(--dark-grey);
+    color: var(--light-grey);
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid var(--nasa-blue);
+    font-size: 0.9em;
+}
+
+.main-footer .container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.main-footer .footer-links a,
+.main-footer .social-media a {
+    color: var(--light-grey);
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.main-footer .social-media img {
+    height: 24px;
+    width: 24px;
+    vertical-align: middle;
+}
