@@ -352,6 +352,120 @@ section img {
     object-position: center top; /* Opcional: para enfocar la parte superior de la imagen */
 }
 
+/* ... (Tus estilos existentes) ... */
+
+/* SECCIÓN INTEGRANTES DEL EQUIPO */
+.section-equipo {
+    background-color: var(--nasa-blue); 
+    color: var(--light-grey);
+    padding: 40px 0;
+}
+
+.section-equipo h2 {
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}
+
+.team-members {
+    display: flex;
+    flex-direction: column; /* Apila los miembros verticalmente en móvil */
+    gap: 20px; /* Espacio entre cada tarjeta de miembro */
+}
+
+.member-card {
+    background-color: var(--nasa-blue);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.member-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    gap: 15px;
+    background-color: rgba(0, 0, 0, 0.2); /* Fondo sutil para el header del miembro */
+}
+
+.member-photo {
+    width: 80px !important; /* Tamaño de la miniatura */
+    height: 80px !important;
+    border-radius: 50%; /* Foto redonda */
+    object-fit: cover;
+    object-position: center;
+    border: 2px solid var(--light-grey);
+}
+
+.member-info {
+    flex-grow: 1; /* Permite que la información ocupe el espacio restante */
+}
+
+.member-info h3 {
+    color: var(--white);
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.member-info .member-title {
+    color: var(--light-grey);
+    font-size: 0.9em;
+}
+
+.member-info .member-role {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8em;
+}
+
+.expand-btn {
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 2em;
+    cursor: pointer;
+    padding: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.expand-btn.active {
+    transform: rotate(45deg); /* Gira el símbolo '+' a 'x' o un icono de cierre */
+}
+
+.member-details {
+    display: none; /* Oculta el contenido extendido por defecto */
+    padding: 0 15px;
+    background-color: var(--nasa-blue);
+    color: var(--white);
+}
+
+.member-details.active {
+    display: block; /* Muestra el contenido cuando está activo */
+    padding-bottom: 15px; /* Padding extra para el contenido desplegado */
+}
+
+.member-description-short {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    padding-top: 15px; /* Padding para la descripción corta cuando está visible */
+}
+
+.member-details .member-description-full {
+    padding-bottom: 10px;
+}
+
+.member-details ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.member-details ul li {
+    font-size: 0.85em;
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
 
 
 

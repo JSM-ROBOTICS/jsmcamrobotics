@@ -97,3 +97,30 @@ document.addEventListener('DOMContentLoaded', () => {
         startAutoSlide();
     }
 });
+
+
+ // --- Código de la Sección Integrantes del Equipo (Acordeón) ---
+    const expandButtons = document.querySelectorAll('.expand-btn');
+
+    expandButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const memberDetails = button.closest('.member-card').querySelector('.member-details');
+
+            // Cierra otros acordeones si están abiertos (opcional, para que solo uno esté abierto a la vez)
+            document.querySelectorAll('.member-details.active').forEach(detail => {
+                if (detail !== memberDetails) {
+                    detail.classList.remove('active');
+                    detail.closest('.member-card').querySelector('.expand-btn').classList.remove('active');
+                    detail.closest('.member-card').querySelector('.expand-btn').setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Alterna la visibilidad del contenido del miembro actual
+            memberDetails.classList.toggle('active');
+            button.classList.toggle('active');
+
+            // Actualiza el atributo aria-expanded para accesibilidad
+            const isExpanded = button.classList.contains('active');
+            button.setAttribute('aria-expanded', isExpanded);
+        });
+    });
