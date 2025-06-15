@@ -342,11 +342,14 @@ section img {
 
 .section-acerca img {
     max-width: 100%;
+    max-height: 200px; /* Agrega esta línea */
     height: auto;
     display: block;
     margin: 30px auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    object-fit: cover; /* Opcional: para mantener la proporción y recortar si es necesario */
+    object-position: center top; /* Opcional: para enfocar la parte superior de la imagen */
 }
 
 
@@ -440,5 +443,37 @@ section img {
         height: 12px; /* Puntos indicadores más grandes */
         width: 12px;
     }
+
+      .section-acerca .container {
+        display: flex;
+        flex-direction: row; /* Asegura que los elementos estén en fila (texto a la izquierda, imagen a la derecha) */
+        align-items: center;
+        gap: 40px;
+        /* text-align: left;  Eliminamos esto de aquí si lo tenías, ya que afecta al contenedor flex entero */
+    }
+
+    .section-acerca .content-wrapper {
+        flex: 1; /* Permite que el texto ocupe el espacio restante */
+        text-align: left; /* Asegura que el texto dentro del wrapper se alinee a la izquierda */
+    }
+
+     .section-acerca h2,
+    .section-acerca h3 {
+        text-align: left; /* Alinea los títulos a la izquierda */
+    }
+
+    .section-acerca p {
+        text-align: justify; /* Mantiene el texto justificado para mejor lectura, o cámbialo a 'left' si prefieres */
+    }
+
+    .section-acerca img {
+        flex-shrink: 0;
+        width: 450px;
+        height: auto;
+        max-height: 500px;
+        margin: 0; /* Elimina cualquier margen de centrado residual */
+    }
+
+    
 }
 
