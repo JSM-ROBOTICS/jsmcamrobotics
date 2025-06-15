@@ -352,7 +352,7 @@ section img {
     object-position: center top; /* Opcional: para enfocar la parte superior de la imagen */
 }
 
-/* ... (Tus estilos existentes) ... */
+
 
 /* SECCIÓN INTEGRANTES DEL EQUIPO */
 .section-equipo {
@@ -370,8 +370,8 @@ section img {
 
 .team-members {
     display: flex;
-    flex-direction: column; /* Apila los miembros verticalmente en móvil */
-    gap: 20px; /* Espacio entre cada tarjeta de miembro */
+    flex-direction: column; 
+    gap: 20px; 
 }
 
 .member-card {
@@ -379,6 +379,7 @@ section img {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    
 }
 
 .member-header {
