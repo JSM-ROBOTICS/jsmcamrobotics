@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Galería de Fotos | JSM CAM ROBOTICS</title>
+        <link rel="stylesheet" href="../styles/main.css"> 
+        <link rel="stylesheet" href="../styles/galeria.css"> 
+    </head>
+    <body>
+        <header class="main-header">
+            <div class="container">
+                <a href="../index.html" class="logo">
+                    <img src="../assets/logojsm.jpeg" alt="Logo JSM CAM ROBOTICS">
+                </a>
+                <button class="menu-toggle" aria-label="Abrir menú">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../index.html#acerca">Acerca</a></li>
+                        <li class="active"><a href="galeria.html">Galería</a></li>
+                        <li><a href="../index.html#equipo">Integrantes del Equipo</a></li>
+                        <li><a href="../index.html#objetivos">Objetivos</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section id="galeria-fotos" class="section-galeria-fotos">
+                <div class="container">
+                    <h2>📸 Galería del Equipo</h2>
+                    <p>Una colección de momento destacados de JSM CAM ROBOTICS en la WRO 2025.</p>
+
+                    <div class="photo-grid">
+                        <div class="photo-item">
+                            <img src="../assets/minjscam.jpeg" alt="Foto del equipo en la competencia">
+                            <div class="photo-caption">
+                                <p>Competencia WRO 2025 - Fase Nacional.</p>
+                            </div>
+                        </div>
+
+                        <div class="photo-item">
+                            <img src="../assets/robotexplorador.jpeg" alt="Jesus trabajando con microbit">
+                            <div class="photo-caption">
+                                <p>Los Robot Exploradores.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="photo-item">
+                            <img src="../assets/reflexiones.jpeg" alt="Stephani y María ensamblando">
+                            <div class="photo-caption">
+                                <p>Reflexiones previas a la competencia.</p>
+                            </div>
+                        </div>
+
+                        <div class="photo-item">
+                            <img src="../assets/demostraciones.jpeg" alt="Foto de sensores y arduinos">
+                            <div class="photo-caption">
+                                <p>Demostraciones en las nacionales.</p>
+                            </div>
+                        </div>
+
+                        <div class="photo-item">
+                            <img src="../assets/asesoriasdos.jpeg" alt="Foto de sensores y arduinos">
+                            <div class="photo-caption">
+                                <p>En asesorias para las internacionales de Singapur.</p>
+                            </div>
+                        </div>
+
+                        <div class="photo-item">
+                            <img src="../assets/practicando.jpeg" alt="Foto de sensores y arduinos">
+                            <div class="photo-caption">
+                                <p>Practicando en el stand.</p>
+                            </div>
+                        </div>
+                        
+                        </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-slogan">
+                    "Explorando lo desconocido, cultivando el futuro."
+                </div>
+                <div class="social-media">
+                    <a href="https://www.instagram.com/tu_usuario" target="_blank" aria-label="Instagram">
+                        <img src="../assets/icons/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://www.tiktok.com/@tu_usuario" target="_blank" aria-label="TikTok">
+                        <img src="../assets/icons/tiktok.png" alt="TikTok">
+                    </a>
+                    <a href="https://www.facebook.com/tu_usuario" target="_blank" aria-label="Facebook">
+                        <img src="../assets/icons/facebook.png" alt="Facebook">
+                    </a>
+                    <a href="https://www.youtube.com/tu_usuario" target="_blank" aria-label="YouTube">
+                        <img src="../assets/icons/youtube.png" alt="YouTube">
+                    </a>
+                </div>
+                <p class="copyright">
+                    &copy; <span id="current-year"></span> Exploración Espacial. Todos los derechos reservados.
+                </p>
+            </div>
+        </footer>
+
+        <script src="../script/app.js"></script>
+        <script>
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        </script>
+    </body>
+</html>
