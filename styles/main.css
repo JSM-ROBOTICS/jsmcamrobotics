@@ -296,6 +296,18 @@ section img {
     margin: 0 auto;
 }
 
+.section-acerca .highlight-subtitle {
+    color: var(--accent-red); /* Utiliza tu color de acento rojo */
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center; /* Centrado en móvil */
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--accent-red); /* Línea decorativa */
+    display: inline-block; /* Permite que la línea se ajuste al ancho del texto */
+    padding-left: 10px;
+    padding-right: 10px;
+}
 .section-acerca h2 {
     color: var(--white);
     text-align: center;
@@ -650,6 +662,12 @@ section img {
 
 /* --- Media Query para Desktop --- */
 @media (min-width: 768px) {
+
+    .section-acerca .highlight-subtitle {
+        text-align: left; /* Alineado a la izquierda en desktop */
+        margin-left: 0;
+        margin-right: auto;
+    }
     .main-footer .container {
         flex-direction: row; /* Coloca los elementos en fila en desktop */
         justify-content: space-between; /* Distribuye el espacio entre los elementos */
