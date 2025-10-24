@@ -124,3 +124,44 @@ document.addEventListener('DOMContentLoaded', () => {
             button.setAttribute('aria-expanded', isExpanded);
         });
     });
+
+
+    function actualizarRelojYContador() {
+    const fechaActual = new Date();
+    
+    // --- 1. Contador de Días (WRO 2025) ---
+    const fechaObjetivo = new Date(2025, 10, 26); // Mes 10 = Noviembre
+    const diferenciaMs = fechaObjetivo.getTime() - fechaActual.getTime();
+    const msEnUnDia = 1000 * 60 * 60 * 24;
+    const diasRestantes = Math.floor(diferenciaMs / msEnUnDia);
+    
+    const elementoContador = document.getElementById('dias-restantes');
+    if (elementoContador) {
+        if (diasRestantes > 0) {
+            elementoContador.textContent = diasRestantes;
+        } else if (diasRestantes === 0) {
+            elementoContador.textContent = "¡HOY ES EL DÍA!";
+        } else {
+            elementoContador.textContent = "Finalizada";
+        }
+    }
+    
+    // --- 2. Reloj Digital (Fecha y Hora) ---
+    const opcionesFecha = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    const opcionesHora = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+
+    const fechaFormato = fechaActual.toLocaleDateString('es-ES', opcionesFecha);
+    const horaFormato = fechaActual.toLocaleTimeString('es-ES', opcionesHora);
+    
+    // Agregamos un nuevo elemento para el reloj en el HTML. 
+    // Si no tienes uno, se mostrará solo en la consola. 
+    // Para mostrarlo en la web, añade un <div> o <p> con ID="reloj-digital" en el HTML.
+    const elementoReloj = document.getElementById('reloj-digital');
+    if (elementoReloj) {
+        elementoReloj.textContent = `${fechaFormato} | ${horaFormato}`;
+    }
+}
+
+// Ejecutar inmediatamente y luego cada segundo
+actualizarRelojYContador();
+setInterval(actualizarRelojYContador, 1000);

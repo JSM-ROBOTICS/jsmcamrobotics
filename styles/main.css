@@ -308,6 +308,45 @@ section img {
     padding-left: 10px;
     padding-right: 10px;
 }
+
+.section-acerca .content-wrapper .countdown-timer {
+    text-align: center; 
+    font-size: 1.5em; 
+    font-weight: bold;
+    color: var(--white);
+    margin-top: 15px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.countdown-number {
+    color: var(--accent-red);
+    font-size: 2em;
+    font-weight: 900;
+    margin-left: 0; 
+    display: block; 
+    padding-top: 5px;
+}
+
+/* --- Estilo de Reloj Digital (Centrado en Móvil) --- */
+.digital-clock {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--light-grey);
+    text-align: center; /* CENTRADO EN MÓVIL */
+    margin-bottom: 25px;
+    padding: 10px 20px;
+    background-color: var(--dark-grey);
+    border: 3px solid var(--accent-red); /* Borde de acento para resaltar */
+    border-radius: 8px;
+    letter-spacing: 3px; /* Mayor espaciado para efecto digital */
+    box-shadow: 0 0 15px rgba(224, 78, 57, 0.5); /* Sombra exterior roja (glow) */
+    max-width: 300px; /* Limita el ancho del reloj para que sea un bloque más centrado */
+    margin-left: auto; /* Centrado automático para bloques en móvil */
+    margin-right: auto;
+}
 .section-acerca h2 {
     color: var(--white);
     text-align: center;
@@ -668,6 +707,23 @@ section img {
         margin-left: 0;
         margin-right: auto;
     }
+
+    .section-acerca .countdown-timer {
+        text-align: left;
+    }
+
+    .countdown-number {
+        display: inline; /* Vuelve a poner el número en la misma línea que el texto en desktop */
+    }
+
+    .digital-clock {
+        text-align: left;
+        margin-left: 0; /* Deshacer el centrado del bloque */
+        margin-right: auto;
+        max-width: 100%; /* Permite que ocupe el ancho de la columna de texto */
+    }
+
+   
     .main-footer .container {
         flex-direction: row; /* Coloca los elementos en fila en desktop */
         justify-content: space-between; /* Distribuye el espacio entre los elementos */
